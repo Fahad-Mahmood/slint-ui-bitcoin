@@ -1,0 +1,35 @@
+export component MnemonicWord {
+    in-out property<string> word: "";
+    in-out property <string> order_number; 
+    height: 36px;
+    width: 82px;
+
+    rect := Rectangle {
+        x: 0;
+        background: #ffffff;
+        height: 100%;
+        width:  100%;
+        border-width: 0.5px;
+        border-color: #000000;
+
+        Text {
+            x: 4px;
+            y: 4px;
+            text: order_number;
+            color: #000000;
+            font-weight: 500;
+            font-size: 10px;
+
+        }
+
+        Text {
+            horizontal-alignment: center;
+            vertical-alignment: center;
+            text: word;
+            color: #000000;
+            font-weight: 700;
+            font-size: 12px;
+        }
+        
+    }
+}

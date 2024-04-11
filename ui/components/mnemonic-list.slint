@@ -1,0 +1,47 @@
+import { MnemonicWord } from "./mnemonic-word.slint";
+
+export component MnemonicList inherits Rectangle {
+    private property<[string]> words_row_1 : ["december", "fever", "suffer", "face"];
+    private property<[string]> words_row_2 : ["hunt", "frame", "buddy", "rent"];
+    private property<[string]> words_row_3 : ["impose", "happy", "predict", "view"];
+    height: 30%;
+    width: 100%;
+
+    VerticalLayout { 
+        spacing: 20px;
+        alignment: space-between;
+
+        HorizontalLayout {
+            width: 100%;
+            alignment: space-between;
+            for word[index] in words_row_1: GridLayout {
+                MnemonicWord {
+                    order_number: index + 1;
+                    word: word;
+                }
+            }
+        }
+
+        HorizontalLayout {
+            width: 100%;
+            alignment: space-between;
+            for word[index] in words_row_2: GridLayout {
+                MnemonicWord {
+                    order_number: index + 5;
+                    word: word;
+                }
+            }
+        }
+
+        HorizontalLayout {
+            width: 100%;
+            alignment: space-between;
+            for word[index] in words_row_3: GridLayout {
+                MnemonicWord {
+                    order_number: index + 9;
+                    word: word;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+import { Button } from "../components/button.slint";
+import { MnemonicList } from "../components/mnemonic-list.slint";
+
+export component SaveMnemonic inherits Rectangle {
+    height: 100%;
+    width: 100%;
+    background: #27ae60;
+
+    VerticalLayout { 
+        height: 100%;
+        width: 100%;
+        padding: 20px;
+
+        Text {
+            max-height: 100px;
+            color: white;
+            font-weight: 700;
+            font-size: 32px;
+            text: "Store\nSeed Phrase";
+        }
+        Text {
+            max-height: 40px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            vertical-stretch: 0;
+            text: "Get a pen and paper before you start!";
+        }
+
+        Text {
+            max-height: 80px;
+            color: white;
+            font-size: 14px;
+            vertical-stretch: 0;
+            font-weight: 400;
+            text: "Write down or copy these words in the correct order \nand keep them somewhere safe.";
+        }
+
+        MnemonicList { }
+
+        Rectangle { 
+            max-height: 100px;
+
+            Button {
+                y: parent.height / 2;
+                btn_text: "I've stored my seed!";
+            }
+        }
+
+    }
+}
